@@ -9,17 +9,31 @@
             font-family: Arial, sans-serif;
             background-color: #ffffff;
             margin: 0;
-            padding: 60px;
+            padding: 20px;
+        }
+        .wrapper {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: auto;
+        }
+        @media (min-width: 768px) {
+            .wrapper {
+                flex-direction: row;
+            }
         }
         .left-side {
             text-align: center;
-            padding-right: 80px;
-            border-right: 1px solid #ddd;
-            flex: 1;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        @media (min-width: 768px) {
+            .left-side {
+                border-right: 1px solid #ddd;
+                border-bottom: none;
+                flex: 1;
+                max-width: 300px;
+            }
         }
         .left-side img.profile-pic {
             width: 180px;
@@ -34,54 +48,71 @@
             margin: 5px;
         }
         .right-side {
-            padding-left: 80px;
             flex: 2;
+            padding: 20px;
         }
         .right-side h2 {
-            margin-top: 0;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .right-side h4 {
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .right-side p {
+            margin: 5px 0 15px;
         }
     </style>
 </head>
 <body>
-    <div class="left-side">
-        <img class="profile-pic" src="photo.jpg" alt="Your Name">
-        <h2>Byeong Jik Kim</h2>
-        <a href="bjkim@jjri.re.kr">
-            <img src="https://img.icons8.com/material-outlined/48/000000/new-post.png" alt="Email">
-        </a>
-        <a href="https://www.instagram.com/bear.s_storage" target="_blank">
-            <img src="https://img.icons8.com/material-outlined/48/000000/instagram-new--v1.png" alt="Instagram">
-        </a>
-        <a href="https://github.com/bear8606" target="_blank">
-            <img src="https://img.icons8.com/material-outlined/48/000000/github.png" alt="GitHub">
-        </a>
-    </div>
-    <div class="right-side">
-        <h2>About</h2>
-        <p>Hello! I'm [Your Name], passionate about [your passion/interests].</p>
-     <div style="margin-top:30px;"></div>
-        <h2>Research Interests</h2>
-        <p>Algorithm, Topic Modeling, NLP, Crawling, Keywords</p>
-        <p>CSR(Corporate Social Responsibility), ESG (Environment, Social, Governance)</p>
-     <div style="margin-top:30px;"></div>
-        <h2>Experience</h2>
-        <h4>KOICA - Volunteer</h4><p>Ethiopia Addis Ababa institute Technology Korean Language</p>
-        <h4>KUCSS - Project Manager</h4><p>Korea Hydro & Nuclear Power, Korea Western Power social project</p>
-        <h4>Urban Regeneration Center - Coordinator (Seoul, Gang-seo)</h4><p>Qualitative research, House repair support project</p>
-        <h4>SKKU HumanRights and Development Center - Assistant Researcher</h4><p>Domestic, Overseas corporation ESG research, Internet community hatespeech research</p>
-        <h4>JeonJu Research Institute - Researcher</h4><p>Economic and Social research division</p>
-     <div style="margin-top:30px;"></div>
-        <h2>Academic</h2>
-        <h4>M.A. SungKyunKwan University</h4><p>Department of Sociology, Social Innovation Convergence Double Major</p>
-        <p>Thesis:Trends in sustainability reporting in global corporations : A topic modeling analysis from 2003 to 2023)</p>
-        <h4>B.A. Woosuk University</h4><p>Department of Law</p>
-     <div style="margin-top:30px;"></div>
-        <h2>Research Project</h2>
-        <h4>SKKU</h4>
-        <p></p>
-        <h4>JeonJu Research Institute</h4>
-        <p>A study on establishing mid- to long-term comprehensive development plan for Jeonju(I)</p>
-        <p>A study on master plan for population policy in Jeonju('26~'30)</p>
+    <div class="wrapper">
+        <div class="left-side">
+            <img class="profile-pic" src="photo.jpg" alt="Byeong Jik Kim">
+            <h2>Byeong Jik Kim</h2>
+            <a href="mailto:bjkim@jjri.re.kr">
+                <img src="https://img.icons8.com/material-outlined/48/000000/new-post.png" alt="Email">
+            </a>
+            <a href="https://www.instagram.com/bear.s_storage" target="_blank">
+                <img src="https://img.icons8.com/material-outlined/48/000000/instagram-new--v1.png" alt="Instagram">
+            </a>
+            <a href="https://github.com/bear8606" target="_blank">
+                <img src="https://img.icons8.com/material-outlined/48/000000/github.png" alt="GitHub">
+            </a>
+        </div>
+        <div class="right-side">
+            <h2>About</h2>
+            <p>Hello! I'm Byeong Jik Kim, passionate about social innovation, data-driven research, and global development.</p>
+
+            <h2>Research Interests</h2>
+            <p>Algorithm, Topic Modeling, NLP, Crawling, Keywords</p>
+            <p>CSR (Corporate Social Responsibility), ESG (Environment, Social, Governance)</p>
+
+            <h2>Experience</h2>
+            <h4>KOICA - Volunteer</h4>
+            <p>Ethiopia Addis Ababa Institute of Technology - Korean Language</p>
+            <h4>KUCSS - Project Manager</h4>
+            <p>Korea Hydro & Nuclear Power, Korea Western Power social project</p>
+            <h4>Urban Regeneration Center - Coordinator (Seoul, Gang-seo)</h4>
+            <p>Qualitative research, House repair support project</p>
+            <h4>SKKU Human Rights and Development Center - Assistant Researcher</h4>
+            <p>Domestic and overseas corporation ESG research, Internet community hate speech research</p>
+            <h4>JeonJu Research Institute - Researcher</h4>
+            <p>Economic and Social Research Division</p>
+
+            <h2>Academic</h2>
+            <h4>M.A. SungKyunKwan University</h4>
+            <p>Department of Sociology, Social Innovation Convergence Double Major</p>
+            <p>Thesis: Trends in sustainability reporting in global corporations : A topic modeling analysis from 2003 to 2023</p>
+            <h4>B.A. Woosuk University</h4>
+            <p>Department of Law</p>
+
+            <h2>Research Project</h2>
+            <h4>SKKU</h4>
+            <p>[프로젝트 상세 내용을 입력하세요]</p>
+            <h4>JeonJu Research Institute</h4>
+            <p>A study on establishing mid- to long-term comprehensive development plan for Jeonju (I)</p>
+            <p>A study on master plan for population policy in Jeonju ('26~'30)</p>
+        </div>
     </div>
 </body>
 </html>
