@@ -3,146 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Byeong Jik Kim | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 20px;
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --light-text: #666;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        .wrapper {
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Layout Structure */
+        .container {
             display: flex;
             flex-direction: column;
-            max-width: 1200px;
-            margin: auto;
+            max-width: 1100px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
         }
-        @media (min-width: 768px) {
-            .wrapper {
-                flex-direction: row;
-            }
-        }
-        .left-side {
+
+        /* Sidebar (Left) */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        @media (min-width: 768px) {
-            .left-side {
-                border-right: 1px solid #ddd;
-                border-bottom: none;
-                flex: 1;
-                max-width: 300px;
-            }
-        }
-        .left-side img.profile-pic {
-            width: 180px;
-            height: 180px;
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 15px;
+            border: 4px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        .left-side a img {
-            width: 30px;
-            height: 30px;
-            margin: 5px;
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin: 10px 0 5px;
+            font-weight: 700;
         }
-        .right-side {
-            flex: 2;
-            padding: 20px;
+
+        .sidebar h2 {
+            font-size: 0.95rem;
+            font-weight: 300;
+            opacity: 0.8;
+            margin-bottom: 30px;
         }
-        .right-side h2 {
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
-        .right-side h4 {
+
+        .social-links {
+            display: flex;
+            gap: 15px;
             margin-top: 20px;
-            margin-bottom: 5px;
         }
-        .right-side p {
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--accent-color);
+        }
+
+        /* Main Content (Right) */
+        .main-content {
+            padding: 40px;
+            flex: 1;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Badges for Research Interests */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Timeline / Experience Items */
+        .item {
+            margin-bottom: 25px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        .item h3 {
             margin: 0 0 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .item .role {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .item .date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .item p {
+            margin: 0;
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            
+            .sidebar {
+                width: 280px;
+                flex-shrink: 0;
+                /* Sticky Sidebar on Desktop */
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                justify-content: flex-start;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            .sidebar {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="left-side">
+
+    <div class="container">
+        <aside class="sidebar">
             <img class="profile-pic" src="photo.jpg" alt="Byeong Jik Kim">
-            <h2>Byeong Jik Kim</h2>
-            <a href="mailto:bjkim@jjri.re.kr">
-                <img src="https://img.icons8.com/material-outlined/48/000000/new-post.png" alt="Email">
-            </a>
-            <a href="https://www.instagram.com/bear.s_storage" target="_blank">
-                <img src="https://img.icons8.com/material-outlined/48/000000/instagram-new--v1.png" alt="Instagram">
-            </a>
-            <a href="https://github.com/bear8606" target="_blank">
-                <img src="https://img.icons8.com/material-outlined/48/000000/github.png" alt="GitHub">
-            </a>
-        </div>
-        <div class="right-side">
-            <h2>About Me</h2>
-            <p>I am interested in the impact of the AI era on society.
-                I plan to analyze the effects of algorithm based online media on society using various methodologies. However, as a social scientist, I find it challenging to learn about technologies such as big data and AI. Therefore, I am studying to keep up with the latest trends. 
-                I have always been passionate about sustainability and social contribution and have been actively involved in related domestic and international activities for about 4.5 years. 
-                I have gained experience in CSR, ESG and international development. I am conducting research based on these experiences.
-            </p>
-
-            <h2>Research Interest</h2>
-            <p>Topic Modeling, Data Mining, NLP, Crawling, AI, Algorithm</p>
-            <p>CSR (Corporate Social Responsibility), ESG (Environmental, Social, Governance)</p>
-            <p>International Development, ODA (Official Development Assistance)</p>
-            <p>Mixed Method (Qualitative, Quantitative)</p>
-
-            <h2>Experience</h2>
-            <h4>
-                Jeonju Research Institute - Researcher
-                <span style="font-size: 0.8em; color: gray;">(2025.02 -)</span>
-            </h4>
-            <p>Economic and Social Research Division</p>
-
-            <h4>
-                SKKU Human Rights and Development Center - Assistant Researcher
-                <span style="font-size: 0.8em; color: gray;">(2023.06 – 2025.05)</span>
-            </h4>
-            <p>Domestic and overseas corporation ESG research, Online hate speech research</p>
-
-            <h4>
-                Urban Regeneration Center - Coordinator (Seoul, Gang-seo)
-                <span style="font-size: 0.8em; color: gray;">(2020.05 – 2021.06)</span>
-            </h4>
-            <p>Qualitative research, House repair support project</p>
-
-            <h4>
-                KUCSS - Project Manager
-                <span style="font-size: 0.8em; color: gray;">(2019.06 – 2020.02)</span>
-            </h4>
-            <p>Korea Hydro & Nuclear Power, Korea Western Power social project</p>
+            <h1>Byeong Jik Kim</h1>
+            <h2>Researcher & Social Data Scientist</h2>
             
-            <h4>
-                KOICA - Volunteer
-                <span style="font-size: 0.8em; color: gray;">(2017.05 – 2019.04)</span>
-            </h4>
-            <p>Ethiopia Addis Ababa Institute of Technology - Korean Language</p>
+            <div class="social-links">
+                <a href="mailto:bjkim@jjri.re.kr" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/bear.s_storage" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/bear8606" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </aside>
 
-            <h2>Academic</h2>
-            <h4>M.A. SungKyunKwan University</h4>
-            <p>Department of Sociology, Social Innovation Convergence Double Major</p>
-            <p><span style="font-size: 0.8em; color: gray;">(Trends in sustainability reporting in global corporations : A topic modeling analysis from 2003 to 2023)</span></p>
-            <h4>B.A. Woosuk University</h4>
-            <p>Department of Law</p>
-
-            <h2>Research Project</h2>
-            <h4>Jeonju Research Institute</h4>
-            <p>IssueBrief(9) : Focused support for hub cities to local population decline</p>
-            <p>Study on the comprehensive strategy for the industry development in Jeonju</p>
-            <p>Study on establishing mid- to long-term comprehensive development plan for Jeonju (I)</p>
-            <p>Study on master plan for population policy in Jeonju ('26~'30)</p>
+        <main class="main-content">
             
-            <h4>SKKU</h4>
-            <p>Development and verification of online hate speech identification model utilizing AI</p>
-            <p>Data based social innovation education and research unit for eliminating multiple disparities and realizing a sustainable society (BK21)</p>
-        </div>
+            <section>
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    I am a social scientist passionate about understanding the societal impact of the AI era. My goal is to bridge the gap between sociological theory and data science.
+                </p>
+                <p>
+                    I utilize methodologies like <strong>NLP and Topic Modeling</strong> to analyze the effects of algorithm-based online media on society. Currently, I am expanding my expertise in Deep Learning (BERT, GPT) to conduct more advanced social research.
+                </p>
+                <p>
+                    With over 4.5 years of experience in CSR, ESG, and international development, I aim to derive data-driven insights that contribute to sustainability and social innovation.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">Research Interests</h2>
+                <div class="tags-container">
+                    <span class="tag">Topic Modeling</span>
+                    <span class="tag">NLP & Text Mining</span>
+                    <span class="tag">Data Analysis (Python)</span>
+                    <span class="tag">AI & Algorithms</span>
+                    <span class="tag">ESG & CSR</span>
+                    <span class="tag">Urban Regeneration</span>
+                    <span class="tag">International Development</span>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="item">
+                    <h3>Jeonju Research Institute</h3>
+                    <span class="role">Researcher, Economic and Social Research Division</span>
+                    <span class="date">2025.02 - Present</span>
+                    <p>Conducting research on regional economic strategies and social policies for Jeonju City.</p>
+                </div>
+
+                <div class="item">
+                    <h3>SKKU Human Rights and Development Center</h3>
+                    <span class="role">Assistant Researcher</span>
+                    <span class="date">2023.06 – 2025.05</span>
+                    <p>Researched ESG trends in domestic/overseas corporations and developed models for detecting online hate speech.</p>
+                </div>
+
+                <div class="item">
+                    <h3>Urban Regeneration Center (Seoul, Gang-seo)</h3>
+                    <span class="role">Coordinator</span>
+                    <span class="date">2020.05 – 2021.06</span>
+                    <p>Managed housing repair support projects and conducted qualitative field research on urban regeneration.</p>
+                </div>
+
+                <div class="item">
+                    <h3>KOICA (Ethiopia)</h3>
+                    <span class="role">Volunteer (Korean Language Instructor)</span>
+                    <span class="date">2017.05 – 2019.04</span>
+                    <p>Addis Ababa Institute of Technology. Facilitated cultural exchange and language education.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Academic</h2>
+                
+                <div class="item">
+                    <h3>M.A. SungKyunKwan University</h3>
+                    <span class="date">Department of Sociology (Double Major in Social Innovation)</span>
+                    <p><strong>Thesis:</strong> Trends in sustainability reporting in global corporations : A topic modeling analysis from 2003 to 2023</p>
+                </div>
+
+                <div class="item">
+                    <h3>B.A. Woosuk University</h3>
+                    <span class="date">Department of Law</span>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Key Projects</h2>
+                <div class="item">
+                    <h3>Jeonju City Policy Research</h3>
+                    <p>• Focused support for hub cities regarding local population decline (Issue Brief)<br>
+                    • Comprehensive strategy for industry development in Jeonju<br>
+                    • Master plan for population policy in Jeonju ('26~'30)</p>
+                </div>
+                <div class="item">
+                    <h3>AI & Social Data Analysis</h3>
+                    <p>• Development and verification of online hate speech identification model utilizing AI<br>
+                    • Data-based social innovation education (BK21)</p>
+                </div>
+            </section>
+
+        </main>
     </div>
+
 </body>
 </html>
