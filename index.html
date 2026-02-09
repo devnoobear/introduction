@@ -183,6 +183,44 @@
                 padding: 30px 20px;
             }
         }
+        /* 링크 스타일 */
+.paper-link {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 기본 글자색 */
+    transition: color 0.2s;
+    border-bottom: 1px dotted #ccc; /* 은은한 밑줄 */
+}
+
+.paper-link:hover {
+    color: #3498db; /* 마우스 올렸을 때 파란색 */
+    border-bottom: 1px solid #3498db;
+}
+
+.paper-link i {
+    font-size: 0.8em; /* 아이콘 크기 약간 작게 */
+    margin-left: 5px;
+    color: #888;
+}
+
+/* 리스트 스타일 (Research 부분 개선을 위해) */
+.project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-list li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.project-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db; /* 불렛 포인트 색상 */
+}
     </style>
 </head>
 <body>
@@ -270,7 +308,12 @@
                 <div class="item">
                     <h3>M.A. SungKyunKwan University</h3>
                     <span class="date">Department of Sociology (Double Major in Social Innovation Convergence)</span>
-                    <p><strong>Thesis:</strong> Trends in sustainability reporting in global corporations : A topic modeling analysis from 2003 to 2023</p>
+                    <p><strong>Thesis:</strong> 
+                        <a href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=867efa79a86f55f7ffe0bdc3ef48d419&keyword=trends%20in%20sustainability%20reporting" target="_blank" class="paper-link">
+                            Trends in sustainability reporting in global corporations : A topic modeling analysis from 2003 to 2023 
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </p>
                 </div>
 
                 <div class="item">
@@ -280,21 +323,42 @@
             </section>
 
             <section>
-                <h2 class="section-title">Researchs</h2>
-                <div class="item">
-                    <h3>Jeonju Policy Research (Jeonju Research institute)</h3>
-                    <p>• Strategies and Key Tasks for Promoting AI Industry in Jeonju<br>
-                    • Focused support for hub cities regarding local population decline (Issue Brief)<br>
-                    • Study on the comprehensive strategy for the industry development in Jeonju city<br>
-                    <span class="date">2 reports on population and culture</span></p>
+                <h2 class="section-title">Research Projects</h2> <div class="item">
+                    <h3>Jeonju Policy Research (Jeonju Research Institute)</h3>
+                    <ul class="project-list">
+                        <li>
+                            <a href="https://jjri.re.kr/cop/bbs/selectArticleDetail.do?nttId=1296&bbsId=BBSMSTR_000000000005&pageIndex=2" target="_blank" class="paper-link">
+                                Strategies and Key Tasks for Promoting AI Industry in Jeonju
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://jjri.re.kr/cop/bbs/selectArticleDetail.do?nttId=1154&bbsId=BBSMSTR_000000000041&pageIndex=1" target="_blank" class="paper-link">
+                                Focused support for hub cities regarding local population decline (Issue Brief)
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://jjri.re.kr/cop/bbs/selectArticleDetail.do?nttId=1156&bbsId=BBSMSTR_000000000005&pageIndex=2" target="_blank" class="paper-link">
+                                Study on the comprehensive strategy for the industry development in Jeonju city
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="date" style="display:block; margin-top:5px;">2 reports on population and culture</span>
                 </div>
+
                 <div class="item">
                     <h3>AI & Social Data Analysis (SKKU)</h3>
-                    <p>• Development and verification of online hate speech identification model utilizing AI<br>
-                    • Data-based social innovation education (BK21)</p>
+                    <ul class="project-list">
+                        <li>
+                                Development and verification of online hate speech identification model utilizing AI
+                        </li>
+                        <li>
+                            Data-based social innovation education (BK21) </li>
+                    </ul>
                 </div>
             </section>
-
         </main>
     </div>
 
